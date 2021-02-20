@@ -1,6 +1,6 @@
 package ru.tkachenko.ecarebillboard.mdb;
 
-import ru.tkachenko.ecarebillboard.dao.RestEJB;
+import ru.tkachenko.ecarebillboard.rest.RestEJB;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
