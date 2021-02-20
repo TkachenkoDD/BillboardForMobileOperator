@@ -1,0 +1,105 @@
+@media screen and (max-width: 991px){}
+.layout-wrapper {
+    padding: 5px 15px;
+}
+    .layout-wrapper {
+        padding: 25px 50px;
+    }
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Sarabun", sans-serif;
+        font-size: 14px;
+        color: #1b1c1e;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        min-height: 100%;
+        background-color: #1E88E5;
+        background-image: -webkit-gradient(linear, left top, right top, from(#1E88E5), to(#0D47A1));
+        background-image: -webkit-linear-gradient(left, #1E88E5, #0D47A1);
+        background-image: -moz-linear-gradient(left, #1E88E5, #0D47A1);
+        background-image: -ms-linear-gradient(left, #1E88E5, #0D47A1);
+        background-image: -o-linear-gradient(left, #1E88E5, #0D47A1);
+        background-image: linear-gradient(left, #1E88E5, #0D47A1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1E88E5', endColorstr='#0D47A1', gradientType=1);
+    }
+
+.layout-topbar {
+    margin-bottom: 25px;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.layout-topbar:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.layout-topbar-logo {
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    /*color: #1b1c1e;*/
+    color: aliceblue;
+    font-family: "Sarabun", sans-serif;
+    font-size: 40px;
+    -webkit-font-smoothing: antialiased;
+}
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Sarabun", sans-serif;
+    font-size: 14px;
+    color: #1b1c1e;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.card {
+    background: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
+
+.product-list-detail{
+    flex: 1 1 0;
+    font-size: 24px;
+}
+
+.product-list-item{
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.product-list-action{
+    justify-content: right;
+    font-size: 30px;
+}
+.accord{
+    margin-right: 10rem;
+}
+.badge{
+    width: 120px;
+}
+
+.errorhandling{
+    margin-top: 7rem;
+    margin-left: 10rem;
+}

@@ -1,15 +1,12 @@
 package ru.tkachenko.ecarebillboard.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Option {
 
     private int id;
     private String optionName;
     private int optionCost;
     private int connectionCost;
-    private Set<Tariff> tariffSet = new HashSet<>();
+    private String category;
 
     public int getId() {
         return id;
@@ -43,11 +40,11 @@ public class Option {
         this.connectionCost = connectionCost;
     }
 
-    public Set<Tariff> getTariffSet() {
-        return tariffSet;
+    public String getCategory() {
+        return category;
     }
 
-    public void setTariffSet(Set<Tariff> tariffSet) {
-        this.tariffSet = tariffSet;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

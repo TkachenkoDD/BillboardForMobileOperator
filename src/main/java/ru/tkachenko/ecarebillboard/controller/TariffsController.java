@@ -1,6 +1,6 @@
 package ru.tkachenko.ecarebillboard.controller;
 
-import ru.tkachenko.ecarebillboard.dao.RestEJB;
+import ru.tkachenko.ecarebillboard.rest.RestEJB;
 import ru.tkachenko.ecarebillboard.entity.Tariff;
 
 import javax.ejb.EJB;

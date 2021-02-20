@@ -9,6 +9,7 @@ public class Tariff {
     private String tariffName;
     private int tariffCost;
     private Set<Option> optionAvailableSet = new HashSet<>();
+    private boolean isHot;
 
     public int getId() {
         return id;
@@ -40,6 +41,14 @@ public class Tariff {
 
     public void setOptionAvailableSet(Set<Option> optionAvailableSet) {
         this.optionAvailableSet = optionAvailableSet;
+    }
+
+    public boolean isHot() {
+        return isHot;
+    }
+
+    public void setHot(boolean hot) {
+        isHot = hot;
     }
 }
 

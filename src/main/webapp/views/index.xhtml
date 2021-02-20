@@ -8,50 +8,53 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Billboard</title>
-    <h:outputStylesheet library="css" name="min.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 <h:body>
 
-    <div class="card">
-        <h5>DataModel</h5>
-        <p:tabView value="#{tariffsController.tariffList}" var="tariff" id="table">
-            <p:tab title="#{tariff.tariffName}">
-                <div class="product">
-                    <div class="product-list-item">
-<!--                        <p:graphicImage name="demo/images/product/#{product.image}"/>-->
-                        <div class="product-list-detail">
-                            <div class="product-name">#{tariff.tariffName}</div>
-<!--                            <div class="product-description">#{product.description}</div>-->
-<!--                            <p:rating readonly="true" value="#{product.rating}"/>-->
-                            <i class="pi pi-tag product-category-icon"/><span
-                                class="product-category">category</span>
-                        </div>
-                        <div class="product-list-action">
-                            <h:outputText value="#{tariff.tariffCost}" styleClass="product-price">
-                                <f:convertNumber currencySymbol="$" type="currency"/>
-                            </h:outputText>
-<!--                            <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>-->
+    <div class="layout-wrapper">
+        <div class="layout-topbar">
+            <div class="layout-topbar-logo"><span>eCare<em>billboard</em></span>
+            </div>
+        </div>
+        <hr/>
+        <div class="card">
+            <h1>ALL TARIFFS</h1>
+            <p:tabView value="#{tariffsController.tariffList}" var="tariff" id="table">
+                <p:tab title="#{tariff.tariffName}">
+                    <div class="product">
+                        <div class="product-list-item">
+                            <div class="product-list-detail">
+                                <div class="p-col-12 p-md-4 badge">
+                                    <p:staticMessage rendered="#{tariff.hot}" severity="info" summary="HOT TARIFF" style="width: 100%"/></div>
+                                <div class="product-name">#{tariff.tariffName}</div>
+                                <div class="accord">
+                                <p:accordionPanel activeIndex="null">
+                                    <p:tab title="Available options:">
+                                        <h:dataTable value="#{tariff.optionAvailableSet}" var="option">
+                                            <h:column>
+                                                #{option.optionName}
+                                            </h:column>
+                                        </h:dataTable>
+                                    </p:tab>
+                                </p:accordionPanel>
+                                </div>
+                            </div>
+                            <div class="product-list-action">
+                                <h:outputText value="#{tariff.tariffCost}">
+                                    <f:convertNumber currencySymbol="$" type="currency"/>
+                                </h:outputText>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </p:tab>
-        </p:tabView>
+                </p:tab>
+            </p:tabView>
+        </div>
+        <h:form>
+            <f:websocket channel="push">
+                <f:ajax event="update" render=":table"/>
+            </f:websocket>
+        </h:form>
     </div>
-
-<!--    <h:dataTable id="table" value="#{tariffsController.tariffList}" var="tariff">-->
-<!--        <h:column>-->
-<!--            <h:outputText value="#{tariff.tariffName}"/>-->
-<!--        </h:column>-->
-<!--        <h:column>-->
-<!--            <h:outputText value="#{tariff.tariffCost}"/>-->
-<!--        </h:column>-->
-<!--    </h:dataTable>-->
-
-    <h:form>
-        <f:websocket channel="push">
-            <f:ajax event="update" render=":table"/>
-        </f:websocket>
-    </h:form>
 </h:body>
-
 </html>
